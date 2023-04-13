@@ -985,11 +985,11 @@ module Kitchen
       end
 
       def puppet_windows_version
-        config[:puppet_version]
+        config[:puppet_version] ? config[:puppet_version].to_s : 'latest'
       end
 
       def puppet_windows_url
-        config[:puppet_windows_url] ? config[:puppet_windows_url].to_s : nil
+        config[:puppet_windows_url]
       end
 
       def puppet_environment_flag
